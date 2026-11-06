@@ -1,0 +1,34 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      TRAVELDESK_HTTPS: "1"
+      TRAVELDESK_PROXY: "1"
+    volumes:
+      - passengers:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+  proxy:
+    image: caddy:2.10
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?Define DOMAIN con tu dominio}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - certificates:/data
+      - caddy_config:/config
+    depends_on:
+      - app
+volumes:
+  passengers:
+  certificates:
+  caddy_config:

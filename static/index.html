@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#123d37"><meta name="description" content="Tu oficina de viajes, en el bolsillo. Gestión privada de pasajeros y reservas.">
+  <link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="stylesheet" href="/styles.css"><title>TravelDesk · Tu oficina de viajes</title>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+<div id="login-view" class="login-layout">
+  <section class="login-story"><a class="brand" href="/">✈ <span>TravelDesk<span class="brand-dot">.</span></span></a><div><span class="eyebrow">TU OFICINA, CONTIGO</span><h1>Cada viaje.<br>Cada detalle.<br>Todo en orden.</h1><p>Un espacio privado para cuidar de tus pasajeros,<br>desde la primera reserva hasta su llegada.</p><div class="flight-art"><span>MAD</span><span>········ ✈ ········</span><span>BOG</span></div></div><small>Gestión privada · Sin inteligencia artificial</small></section>
+  <main class="login-card"><div class="lock-mark">⌑</div><span class="eyebrow">ACCESO PRIVADO</span><h2>Bienvenido a tu oficina</h2><p>Entra para gestionar tus próximos viajes.</p><form id="login-form"><label>Usuario<input name="username" autocomplete="username" required maxlength="80" autofocus></label><label>Contraseña<input name="password" type="password" autocomplete="current-password" required maxlength="200"></label><p id="login-error" class="error" role="alert"></p><button class="primary full" type="submit">Entrar en TravelDesk <span>→</span></button></form><p class="quiet small">Tu sesión se cierra tras 15 minutos de inactividad en esta pantalla. No guardamos pasajeros en el teléfono.</p></main>
+</div>
+<div id="app-view" class="app-layout" hidden>
+  <aside class="sidebar"><a class="brand" href="/">✈ <span>TravelDesk<span class="brand-dot">.</span></span></a><span class="workspace-label">MI OFICINA</span><nav id="navigation" aria-label="Navegación principal"></nav><div class="sidebar-footer"><div class="private-badge">● Espacio privado</div><p>Solo tú tienes acceso.<br>Sin LLM ni analítica externa.</p><button id="logout" class="sidebar-logout">↪ Cerrar sesión</button></div></aside>
+  <div class="main-column"><header class="topbar"><span class="topbar-caption">Menos hojas de cálculo. Más tranquilidad.</span><span class="mobile-brand">✈ TravelDesk.</span><div class="topbar-right"><span id="connection" class="connection">● Conectado</span><button id="privacy-toggle" class="icon-button" aria-label="Ocultar nombres en pantalla" title="Ocultar nombres">◉</button><button id="install" class="subtle" hidden>Instalar app</button><button id="mobile-logout" class="icon-button" aria-label="Cerrar sesión">↪</button><span class="avatar" aria-label="Administrador">AD</span></div></header>
+  <main id="content" tabindex="-1"></main><footer class="page-footer">TravelDesk <span>·</span> Tu oficina de viajes, en el bolsillo. <span>·</span> Los horarios se muestran en la zona de tu dispositivo.</footer></div>
+</div>
+<dialog id="modal"><div class="modal-header"><h2 id="modal-title"></h2><button id="close-modal" class="icon-button" aria-label="Cerrar ventana">×</button></div><div id="modal-body"></div></dialog>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+</body></html>

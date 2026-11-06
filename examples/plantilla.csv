@@ -1,0 +1,2 @@
+﻿nombre,email,telefono,localizador,origen,destino,vuelo,salida,llegada,escalas,estado,importe,pagado
+Persona Ejemplo,persona@example.invalid,+34000000000,EJEM01,MAD,BOG,TD101,2026-11-05T10:00:00+01:00,2026-11-05T20:00:00+01:00,Directo,confirmada,850.00,200.00
